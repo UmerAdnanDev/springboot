@@ -18,5 +18,10 @@ public class Application {
 				// WAY 2: @COMPONENT - Ask Spring to give you the object
         ComponentAnnotation comp = context.getBean(ComponentAnnotation.class); //asks springboot for object(bean) instead of manual creation
         comp.Msg();
+				
+				// WAY 3: DEPENDENCY INJECTION - Spring gives you an object that has other objects inside it
+        MyApp myapp = context.getBean(MyApp.class);
+        myapp.run1(); // This uses ComponentAnnotation
+        myapp.run2(); // This uses NotBeanClass (which became a bean via @Bean)
 	}
 }
