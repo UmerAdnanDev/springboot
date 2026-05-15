@@ -1,5 +1,4 @@
 package com.example.topic1;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +14,9 @@ public class Application {
         // WAY 1: MANUAL - You create the object yourself
         ManualComponent mycomp = new ManualComponent();
         mycomp.Msg();
-	}
 
+				// WAY 2: @COMPONENT - Ask Spring to give you the object
+        ComponentAnnotation comp = context.getBean(ComponentAnnotation.class); //asks springboot for object(bean) instead of manual creation
+        comp.Msg();
+	}
 }
