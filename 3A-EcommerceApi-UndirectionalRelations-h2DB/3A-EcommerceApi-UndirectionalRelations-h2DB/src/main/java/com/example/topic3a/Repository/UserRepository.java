@@ -39,4 +39,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Find users with no profile (profile is null)
     @Query("SELECT u FROM User u WHERE u.profile IS NULL")
     List<User> findUsersWithoutProfile();
+
+    // Find users who have a cart with status ACTIVE
+    @Query("SELECT u FROM User u JOIN Cart c ON c.user.id = u.id WHERE c.status = 'ACTIVE'")
+    List<User> findUsersWithActiveCart();
 }

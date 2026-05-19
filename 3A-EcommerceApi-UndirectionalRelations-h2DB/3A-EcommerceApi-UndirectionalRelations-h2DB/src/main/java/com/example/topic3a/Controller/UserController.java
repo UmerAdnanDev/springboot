@@ -65,6 +65,11 @@ public class UserController {
         userRepository.deleteById(id);
         return "User deleted: " + id;
     }
+    // GET users with active cart (JPQL with join)
+    @GetMapping("/active-cart")
+    public List<User> getUsersWithActiveCart() {
+        return userRepository.findUsersWithActiveCart();
+    }
     
     // Inner class for request body
     static class UserRequest {
