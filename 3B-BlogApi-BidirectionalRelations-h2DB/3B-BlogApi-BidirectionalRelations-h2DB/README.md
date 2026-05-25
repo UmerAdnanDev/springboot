@@ -34,9 +34,9 @@ A complete REST API demonstrating **bidirectional relationships** (One-to-Many, 
 | **One-to-Many** | Post → Comment | Comment (has post_id) | Post (mappedBy = "post") | Post has many comments |
 | **Many-to-Many** | Post ↔ Category | Category (has @JoinTable) | Post (mappedBy = "categories") | Posts belong to categories |
 
-### 2. New Concepts in Phase 2B (vs Phase 2A)
+### 2. New Concepts in Phase 3B (vs Phase 3A)
 
-| Concept | Phase 2A (Unidirectional) | Phase 2B (Bidirectional) |
+| Concept | Phase 3A (Unidirectional) | Phase 3B (Bidirectional) |
 |---------|--------------------------|--------------------------|
 | **Navigation** | One-way only | Two-way |
 | **mappedBy** | Not used | Required on inverse side |
@@ -56,8 +56,8 @@ A complete REST API demonstrating **bidirectional relationships** (One-to-Many, 
 | Read by Username | GET | `/api/users/username/{username}` |
 | Read by Email | GET | `/api/users/email/{email}` |
 | Search by Name | GET | `/api/users/search/{keyword}` |
-| **User with Posts** | GET | `/api/users/{id}/with-posts` ✨ |
-| **Active Authors** | GET | `/api/users/active-authors` ✨ |
+| **User with Posts** | GET | `/api/users/{id}/with-posts`  |
+| **Active Authors** | GET | `/api/users/active-authors`  |
 | Update | PUT | `/api/users/{id}` |
 | Delete | DELETE | `/api/users/{id}` |
 
@@ -67,9 +67,9 @@ A complete REST API demonstrating **bidirectional relationships** (One-to-Many, 
 | Create | POST | `/api/posts` |
 | Read All | GET | `/api/posts` |
 | Read One | GET | `/api/posts/{id}` |
-| **Post with Details** | GET | `/api/posts/{id}/details` ✨ |
+| **Post with Details** | GET | `/api/posts/{id}/details` |
 | By Category | GET | `/api/posts/category/{categoryName}` |
-| **Comment Stats** | GET | `/api/posts/stats/comments` ✨ |
+| **Comment Stats** | GET | `/api/posts/stats/comments`  |
 | Update | PUT | `/api/posts/{id}` |
 | Delete | DELETE | `/api/posts/{id}` |
 
@@ -79,10 +79,10 @@ A complete REST API demonstrating **bidirectional relationships** (One-to-Many, 
 | Create | POST | `/api/comments` |
 | Read All | GET | `/api/comments` |
 | Read One | GET | `/api/comments/{id}` |
-| **Comment with Post** | GET | `/api/comments/{id}/with-post` ✨ |
+| **Comment with Post** | GET | `/api/comments/{id}/with-post`  |
 | By Post | GET | `/api/comments/post/{postId}` |
 | By Author | GET | `/api/comments/author/{authorName}` |
-| **With Post Details** | GET | `/api/comments/post/{postId}/with-details` ✨ |
+| **With Post Details** | GET | `/api/comments/post/{postId}/with-details`  |
 | Update | PUT | `/api/comments/{id}` |
 | Delete | DELETE | `/api/comments/{id}` |
 
@@ -92,13 +92,13 @@ A complete REST API demonstrating **bidirectional relationships** (One-to-Many, 
 | Create | POST | `/api/categories` |
 | Read All | GET | `/api/categories` |
 | Read One | GET | `/api/categories/{id}` |
-| **Category with Posts** | GET | `/api/categories/{id}/with-posts` ✨ |
-| **Post Counts** | GET | `/api/categories/stats/post-counts` ✨ |
-| **Popular Categories** | GET | `/api/categories/popular/{minPosts}` ✨ |
+| **Category with Posts** | GET | `/api/categories/{id}/with-posts`  |
+| **Post Counts** | GET | `/api/categories/stats/post-counts`  |
+| **Popular Categories** | GET | `/api/categories/popular/{minPosts}`  |
 | By Name | GET | `/api/categories/name/{name}` |
 | Delete | DELETE | `/api/categories/{id}` |
 
-✨ **New in Phase 2B** (Bidirectional queries)
+ **New in Phase 3B** (Bidirectional queries)
 
 ### 4. Spring Boot Annotations Used
 
